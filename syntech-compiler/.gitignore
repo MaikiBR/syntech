@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno virtual
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Otros
+.DS_Store
+
+# Archivos generados por PLY
+# parser.out -> Información de depuración
+# parsetab.py -> Tabla de análisis
+
+parser.out 
+parsetab.py
