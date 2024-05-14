@@ -34,8 +34,8 @@ export default function Home() {
         </div>
         <p className="text-5xl font-bold pt-20">Haz click para ir al editor</p>
       </div>
-      <div className="flex justify-center p-28 bg-background-light text-logo-blue">
-        <p className="text-5xl font-bold pb-7" >Gramática</p>
+      <div className="flex flex-col justify-center items-center p-28 bg-background-light text-logo-blue">
+        <p className="text-5xl font-bold pb-9" >Gramática</p>
         <Gramatica/>
       </div>
     </main>
