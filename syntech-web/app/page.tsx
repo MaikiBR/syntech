@@ -1,7 +1,46 @@
 import Image from "next/image";
+import Hero from "./components/hero";
+import Gramatica from "./components/gramatica";
 
 export default function Home() {
   return (
+    <main>
+      <div>
+        <Hero/>
+      </div>
+      <div className="flex justify-center p-28 bg-background-light text-logo-blue">
+        <div className="w-7/12 flex flex-col items-center text-center" >
+          <p className="text-5xl font-bold pb-7" >¿Qué es syntech?</p>
+          <p className="text-xl">Syntech es un lenguaje de marcado diseñado para formatear texto de manera sencilla y legible, 
+            pero con una gramática específica que lo distingue de otros lenguajes similares como Markdown. 
+            Al igual que Markdown, Syntech se enfoca en la facilidad de uso y la legibilidad, permitiendo 
+            a los usuarios formatear texto sin necesidad de conocimientos avanzados de programación.
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center p-16 text-primary-light bg-section-home">
+        <p className="text-5xl font-bold pb-20">¡Comienza ahora!</p>
+        <div className="flex flex-row">
+          <div className="flex flex-col items-start h-72 w-fit mr-24 py-8 pl-8 pr-40 text-xl rounded-lg bg-white text-gray-900">
+            <p>&#35;1{"{ Comienza con un título }"}</p>
+            <p>#</p>
+            <p>“Continua escribiendo aqui”</p>
+          </div>
+          <div className="flex flex-col items-start h-72 w-fit py-8 pl-8 pr-40 rounded-lg bg-white text-gray-900">
+            <p className="text-3xl pb-4">Comienza con un título</p>
+            <p></p>
+            <p className="text-xl">Continua escribiendo aqui</p>
+          </div>
+        </div>
+        <p className="text-5xl font-bold pt-20">Haz click para ir al editor</p>
+      </div>
+      <div className="flex justify-center p-28 bg-background-light text-logo-blue">
+        <p className="text-5xl font-bold pb-7" >Gramática</p>
+        <Gramatica/>
+      </div>
+    </main>
+  );
+    {/*
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
@@ -109,5 +148,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  );
+   */}
 }
