@@ -21,6 +21,7 @@ const config: Config = {
         'logo-blue': '#4A5D5E',
         'primary-light': '#D2DBC8',
         'background-light': '#FBFFF8',
+        'secondary-blue': '#9AC2C4',
       },
 
     },

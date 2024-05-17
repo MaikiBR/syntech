@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Hero() {
     return (
     <div className="bg-hero-background">
@@ -16,26 +14,6 @@ export default function Hero() {
                 <p className="pt-6 text-2xl text-logo-blue" >El diseño para tu texto como nunca antes</p>
             </div>
         </div>
-
-        
-
-        {/*
-        <div className="w-screen">
-            
-            
-             <img className="absolute z-0" alt="hero" src={"/hero-background.png" } />
-            <div className="z-1">hola</div> 
-
-
-          <Image
-                src="/hero-background.png" 
-                alt={"hero"}        
-                fill={true}
-                objectFit="cover"
-                objectPosition="center"
-            />  
-    </div> */}
-    </div>
-        
+    </div>     
     );
 }
