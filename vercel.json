@@ -1,0 +1,6 @@
+{
+    "builds": [
+      { "src": "syntech-compiler/src/main.py", "use": "@vercel/python" }
+    ]
+  }
+  
