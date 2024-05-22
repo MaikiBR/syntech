@@ -1,6 +1,12 @@
 {
     "builds": [
-      { "src": "syntech-compiler/src/main.py", "use": "@vercel/python" }
+        {
+            "src": "syntech-web",
+            "use": "@vercel/static-build"
+        },
+        {
+            "src": "syntech-compiler/src/main.py",
+            "use": "@vercel/python"
+        }
     ]
-  }
-  
+}
