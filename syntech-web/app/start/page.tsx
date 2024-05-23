@@ -14,7 +14,7 @@ export default function Start() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const res = await fetch('../api/compile', {
+    const res = await fetch('../../api-python/main', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
