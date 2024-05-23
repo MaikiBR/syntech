@@ -1,0 +1,18 @@
+{
+    "builds": [
+        {
+            "src": "syntech-web",
+            "use": "@vercel/static-build"
+        },
+        {
+            "src": "syntech-compiler",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/compile",
+            "dest": "syntech-compiler/src/main.py"
+        }
+    ]
+}
