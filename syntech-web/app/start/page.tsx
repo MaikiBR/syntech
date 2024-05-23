@@ -47,7 +47,7 @@ export default function Start() {
                 <textarea
                   id="comment"
                   rows={10}
-                  className="w-full h-[400px] px-0 text-sm text-gray-900 bg-white border-0"
+                  className="w-full h-[400px] px-0 text-gray-900 bg-white border-0"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   required
@@ -56,7 +56,7 @@ export default function Start() {
               <div className="flex items-center justify-between px-3 py-2 border-t">
                 <button
                   type="submit"
-                  className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-logo-blue rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-secondary-blue hover:text-logo-blue"
+                  className="inline-flex items-center py-2.5 px-4 font-medium text-center text-white bg-logo-blue rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-secondary-blue hover:text-logo-blue"
                 >
                   Ejecutar
                 </button>
@@ -69,7 +69,7 @@ export default function Start() {
             <div className="px-4 py-2 bg-white rounded-t-lg">
               <div
                 id="comment"
-                className="w-full h-[459px] px-0 text-sm text-gray-900 bg-white border-0"
+                className="w-full h-[459px] px-0 text-gray-900 bg-white border-0"
                 dangerouslySetInnerHTML={{ __html: outputText }}
               />
             </div>
