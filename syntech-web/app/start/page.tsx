@@ -67,7 +67,7 @@ export default function Start() {
         <div className="w-full">
           <div className="w-full border border-gray-200 rounded-lg bg-gray-50">
             <div className="px-4 py-2 bg-white rounded-t-lg">
-              <p
+              <div
                 id="comment"
                 className="w-full h-[459px] px-0 text-sm text-gray-900 bg-white border-0"
                 dangerouslySetInnerHTML={{ __html: outputText }}
