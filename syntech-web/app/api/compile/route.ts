@@ -1,12 +1,12 @@
-const { exec } = require("child_process");
-const { NextResponse } = require("next/server");
+import { exec } from "child_process";
+import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<void | Response> {
     const { text } = await request.json();
 
-    return new Promise((resolve) => {
+    return new Promise<void | Response>((resolve) => {
         const command = `python api-python/main.py "${text}"`;
-        exec(command, (error: { message: any; }, stdout: any, stderr: any) => {
+        exec(command, (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error: ${error.message}`);
                 resolve(NextResponse.json({ error: error.message }, { status: 500 }));
