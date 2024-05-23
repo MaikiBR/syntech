@@ -1,7 +1,12 @@
-import json
-from lexer import lexer
-from parser import parser
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from syntechparser import parser
+from syntechlexer import lexer
+import json
+import sys
+from os.path import dirname, abspath
+
+
+sys.path.append(dirname(abspath(__file__)))
 
 
 class Handler(BaseHTTPRequestHandler):
