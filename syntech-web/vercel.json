@@ -6,13 +6,16 @@
             "use": "@vercel/next"
         },
         {
-            "src": "api-python/*.py",
+            "src": "api-python/main.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
-            "src": "/api-python/(.*)",
+            "src": "/api/parse",
+            "methods": [
+                "POST"
+            ],
             "dest": "/api-python/main.py"
         }
     ]
