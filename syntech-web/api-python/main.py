@@ -1,3 +1,8 @@
+import sys
+from os.path import dirname, abspath
+
+sys.path.append(dirname(abspath(__file__)))
+
 from flask import Flask, request, jsonify
 from syntechparser import parser
 from syntechlexer import lexer
