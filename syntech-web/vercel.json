@@ -12,10 +12,6 @@
         {
             "src": "app/api/compile/route.ts",
             "use": "@vercel/node"
-        },
-        {
-            "src": "Dockerfile",
-            "use": "docker"
         }
     ],
     "routes": [
