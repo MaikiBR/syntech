@@ -2,11 +2,13 @@
     "builds": [
         {
             "src": "syntech-web",
-            "use": "@vercel/static-build"
+            "use": "@vercel/static-build",
+            "config": { "outputDirectory": "out" }
         },
         {
             "src": "syntech-compiler",
-            "use": "@vercel/python"
+            "use": "@vercel/python",
+            "config": { "outputDirectory": "dist" }
         }
     ],
     "routes": [
