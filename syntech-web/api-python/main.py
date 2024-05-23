@@ -1,38 +1,16 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from flask import Flask, request, jsonify
 from syntechparser import parser
 from syntechlexer import lexer
-import json
-import sys
-from os.path import dirname, abspath
 
+app = Flask(__name__)
 
-sys.path.append(dirname(abspath(__file__)))
-
-
-class Handler(BaseHTTPRequestHandler):
-    def do_POST(self):
-        content_length = int(self.headers['Content-Length'])
-        post_data = self.rfile.read(content_length)
-        data = json.loads(post_data)
-
-        s = data.get('text', '')
-        result = parser.parse(s, lexer=lexer)
-
-        response = {
-            'result': result
-        }
-
-        self.send_response(200)
-        self.send_header('Content-Type', 'application/json')
-        self.end_headers()
-        self.wfile.write(json.dumps(response).encode())
-
-
-def run(server_class=HTTPServer, handler_class=Handler, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    httpd.serve_forever()
-
+@app.route('/api/parse', methods=['POST'])
+def parse_text():
+    data = request.get_json()
+    s = data.get('text', '')
+    result = parser.parse(s, lexer=lexer)
+    response = {'result': result}
+    return jsonify(response)
 
 if __name__ == "__main__":
-    run()
+    app.run()

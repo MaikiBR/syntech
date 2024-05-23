@@ -14,16 +14,25 @@ export default function Start() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const res = await fetch('../../api-python/main', {
-        method: 'POST',
+    try {
+      const res = await fetch("/api/parse", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ text: inputText }),
-    });
+      });
 
-    const data = await res.json();
-    setOutputText(data.result);
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await res.json();
+      setOutputText(data.result);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setOutputText("Hubo un error al procesar tu solicitud.");
+    }
   };
 
   return (

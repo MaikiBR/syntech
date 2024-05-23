@@ -1,4 +1,4 @@
-from lexer import tokens
+from syntechlexer import tokens
 import ply.yacc as yacc
 
 

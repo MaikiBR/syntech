@@ -7,10 +7,7 @@
         },
         {
             "src": "api-python/*.py",
-            "use": "@vercel/python",
-            "config": {
-                "runtime": "python3.12"
-            }
+            "use": "@vercel/python"
         }
     ],
     "routes": [
