@@ -5,7 +5,7 @@ export async function POST(request: Request): Promise<void | Response> {
   const { text } = await request.json();
 
   return new Promise<void | Response>((resolve) => {
-    const command = `python api-python/main.py "${text}"`;
+    const command = `python3 api-python/main.py "${text}"`;
     exec(
       command,
       (error: { message: string } | null, stdout: string, stderr: string) => {
