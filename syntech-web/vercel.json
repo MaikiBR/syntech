@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api-python/*.py",
+            "use": "@vercel/python"
+        },
+        {
+            "src": "app/api/compile/route.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/compile",
+            "dest": "/app/api/compile/route.ts"
+        },
+        {
+            "src": "/api-python/(.*)",
+            "dest": "/api-python/main.py"
+        }
+    ]
+}

@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     const { text } = await request.json();
 
     return new Promise<void | Response>((resolve) => {
-        const command = `python "C:/Users/mikeb/Documents/GitHub/syntech/syntech-compiler/src/main.py" "${text}"` // Change to global path
+        const command = `python api-python/main.py "${text}"` // Change to global path -> "C:/Users/mikeb/Documents/GitHub/syntech/syntech-compiler/src/main.py"
         exec(command, (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error: ${error.message}`);
