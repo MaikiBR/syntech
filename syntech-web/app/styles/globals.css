@@ -26,6 +26,21 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+h1{
+  font-size: 34px;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h3{
+  font-size: 28px;
+  font-weight: 700;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
