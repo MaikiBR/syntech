@@ -41,20 +41,20 @@ export default function Welcome() {
         <p className="text-5xl font-bold pb-20">Equipo de Syntech</p>
         <div className="flex flex-row">
           <div className="flex flex-col justify-center items-center m-10">
-            <img className="size-24 rounded-full mb-4" src={"/hero-background.png" }/>
-            <p>Nombre Apellido</p>
+            <img className="size-24 rounded-full mb-4" src={"/gina.jpeg" }/>
+            <p>Regina Rodriguez</p>
           </div>
           <div className="flex flex-col justify-center items-center m-10">
-            <img className="size-24 rounded-full mb-4" src={"/hero-background.png" }/>
-            <p>Nombre Apellido</p>
+            <img className="size-24 rounded-full mb-4" src={"/mike.png" }/>
+            <p>Miguel Bermea</p>
           </div>
           <div className="flex flex-col justify-center items-center m-10">
-            <img className="size-24 rounded-full mb-4" src={"/hero-background.png" }/>
-            <p>Nombre Apellido</p>
+            <img className="size-24 rounded-full mb-4" src={"/salma.jpeg" }/>
+            <p>Salma Martinez</p>
           </div>
           <div className="flex flex-col justify-center items-center m-10">
-            <img className="size-24 rounded-full mb-4" src={"/hero-background.png" }/>
-            <p>Nombre Apellido</p>
+            <img className="size-24 rounded-full mb-4" src={"/carol.jpeg" }/>
+            <p>Carol Arrieta</p>
           </div>
         </div>
       </div>
