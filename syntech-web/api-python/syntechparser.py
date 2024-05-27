@@ -24,9 +24,11 @@ def p_expression(p):
         p[0] = p[1] + p[2]
     elif len(p) == 4:
         if p[1] == '\\begin{ulist}' and p[3] == '\\end{ulist}':
-            p[0] = f'<ul className="list-disc list-inside">{p[2]}</ul>'
+            list_items = ''.join(f'<li>{item}</li>' for item in p[2].split())
+            p[0] = f'<ul className="list-disc list-inside">{list_items}</ul>'
         elif p[1] == '\\begin{olist}' and p[3] == '\\end{olist}':
-            p[0] = f'<ol className="list-decimal list-inside">{p[2]}</ol>'
+            list_items = ''.join(f'<li>{item}</li>' for item in p[2].split())
+            p[0] = f'<ol className="list-decimal list-inside">{list_items}</ol>'
     else:
         if p.slice[1].type == 'HEADER1':
             p[0] = f'<h1>{p[1][3:-1]}</h1>'
