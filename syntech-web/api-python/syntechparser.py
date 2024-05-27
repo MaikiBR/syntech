@@ -46,7 +46,7 @@ def p_expression(p):
         elif p.slice[1].type == 'LINK':
             link_text = p[1][2:-1]
             url, title = link_text.split(']{')
-            p[0] = f'<a href="{url}">{title}</a>'
+            p[0] = f'<a href="{url}" target="_blank">{title}</a>'
         elif p.slice[1].type == 'PLAINTEXT':
             p[0] = p[1][1:-1]
         elif p.slice[1].type == 'CODE':

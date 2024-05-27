@@ -41,6 +41,11 @@ h3 {
   font-weight: 700;
 }
 
+a {
+  text-decoration: underline;
+  cursor: auto;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
