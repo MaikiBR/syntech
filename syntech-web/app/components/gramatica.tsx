@@ -184,7 +184,7 @@ export default function Gramatica() {
               {"\\end{ulist}"}
             </td>
             <td className="px-6 py-4">
-              <ul className={"list-disc list-inside"}>
+              <ul className="list-disc list-inside">
                 <li>Ejemplo</li>
                 <li>Ejemplo</li>
               </ul>
