@@ -1,5 +1,5 @@
-from syntechlexer import tokens
 import ply.yacc as yacc
+from syntechlexer import tokens
 
 
 def p_expression(p):
@@ -23,9 +23,9 @@ def p_expression(p):
         p[0] = p[1] + p[2]
     elif len(p) == 4:
         if p[1] == '\\begin{ulist}' and p[3] == '\\end{ulist}':
-            p[0] = f'<ul className="list-disc list-inside">{p[2]}</ul>'
+            p[0] = f'<ul>{p[2]}</ul>'
         elif p[1] == '\\begin{olist}' and p[3] == '\\end{olist}':
-            p[0] = f'<ol className="list-decimal list-inside">{p[2]}</ol>'
+            p[0] = f'<ol>{p[2]}</ol>'
     else:
         if p.slice[1].type == 'HEADER1':
             p[0] = f'<h1>{p[1][3:-1]}</h1>'
@@ -44,7 +44,8 @@ def p_expression(p):
         elif p.slice[1].type == 'NEWLINE':
             p[0] = '<br>'
         elif p.slice[1].type == 'LINK':
-            url, title = p[1][2:-1].split(']{')
+            link_text = p[1][2:-1]
+            url, title = link_text.split(']{')
             p[0] = f'<a href="{url}">{title}</a>'
         elif p.slice[1].type == 'PLAINTEXT':
             p[0] = p[1][1:-1]
