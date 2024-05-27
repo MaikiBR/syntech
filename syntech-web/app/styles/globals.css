@@ -41,9 +41,19 @@ h3 {
   font-weight: 700;
 }
 
-a {
+#comment a {
   text-decoration: underline;
   cursor: pointer;
+}
+
+ul {
+  list-style-type: disc;
+  list-style: inside;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style: inside;
 }
 
 @layer utilities {
