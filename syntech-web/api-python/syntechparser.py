@@ -14,6 +14,7 @@ def p_expression(p):
                   | NEWLINE
                   | ULISTSTART ulist ULISTEND
                   | OLISTSTART olist OLISTEND
+                  | LISTITEM
                   | LINK
                   | PLAINTEXT
                   | CODE
@@ -43,9 +44,13 @@ def p_expression(p):
             p[0] = f'<u>{p[1][1:-1]}</u>'
         elif p.slice[1].type == 'NEWLINE':
             p[0] = '<br>'
+        elif p.slice[1].type == 'LISTITEM':
+            p[0] = f'<li>{p[1][6:]}</li>'
         elif p.slice[1].type == 'LINK':
-            link_text = p[1][2:-1]
+            link_text = p[1][2:-1]  # Extract the part inside [[ ]]
             url, title = link_text.split(']{')
+            if not url.startswith('http://') and not url.startswith('https://'):
+                url = 'https://' + url
             p[0] = f'<a href="{url}" target="_blank">{title}</a>'
         elif p.slice[1].type == 'PLAINTEXT':
             p[0] = p[1][1:-1]
@@ -61,18 +66,18 @@ def p_ulist(p):
     '''ulist : ulist LISTITEM
              | LISTITEM'''
     if len(p) == 3:
-        p[0] = p[1] + f'<li>{p[2][6:]}</li>'
+        p[0] = p[1] + p[2]
     else:
-        p[0] = f'<li>{p[1][6:]}</li>'
+        p[0] = p[1]
 
 
 def p_olist(p):
     '''olist : olist LISTITEM
              | LISTITEM'''
     if len(p) == 3:
-        p[0] = p[1] + f'<li>{p[2][6:]}</li>'
+        p[0] = p[1] + p[2]
     else:
-        p[0] = f'<li>{p[1][6:]}</li>'
+        p[0] = p[1]
 
 
 def p_error(p):
