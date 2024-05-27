@@ -43,7 +43,7 @@ h3 {
 
 a {
   text-decoration: underline;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @layer utilities {
